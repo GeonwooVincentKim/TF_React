@@ -41,7 +41,15 @@ const TensorflowExample = () => {
             ...valuePairsState,
             {x : 1, y: 1}
         ]);
-    }
+    };
+    
+    // Change Model-Index by handling Model-Colums-Index that belongs to Model.
+    const handleModelChnage = (e) => setModelState({
+        ...modelState,
+        [e.target.name]: [parseInt(e.target.value)],
+    });
+
+
     return (
         <div className="tensorflow-example">
 
