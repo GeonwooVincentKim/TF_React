@@ -66,10 +66,11 @@ const TensorflowExample = () => {
                     <div className="field-label column">X</div>
                     <div className="field-label column">Y</div>
                 </div>
-
+                {/* Rendering a field input and output. */}
                 {valuePairsState.map((val, index) => {
                     return (
                         <div key={index} className="row">
+                            {/* This is input. */}
                             <input
                                 className="field field-x column"
                                 value={val.x}
@@ -78,6 +79,7 @@ const TensorflowExample = () => {
                                 onChange={HandleValuePairChange}
                                 type="number" pattern="[0-9]*"
                             />
+                            {/* This is output. */}
                             <input
                                 className="field field-y column"
                                 value={val.y}
@@ -89,6 +91,20 @@ const TensorflowExample = () => {
                         </div>
                     );
                 })};
+
+                {/* Create button that adds new items. */}
+                <button
+                    className="button-add-example button --green"
+                    onClick={handleAddItem}>
+                    +
+                </button>
+
+                {/* Training the model are alreaddy connected to their respective handlers. */}
+                <button
+                    className="button-train-example button --green"
+                    onClick={handleAddItem}>
+                    Train
+                </button>
             </div>
         </div>
     );
