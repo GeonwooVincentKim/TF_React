@@ -44,7 +44,7 @@ const TensorflowExample = () => {
     };
     
     // Change Model-Index by handling Model-Colums-Index that belongs to Model.
-    const handleModelChnage = (e) => setModelState({
+    const handleModelChange = (e) => setModelState({
         ...modelState,
         [e.target.name]: [parseInt(e.target.value)],
     });
@@ -105,6 +105,22 @@ const TensorflowExample = () => {
                     onClick={handleAddItem}>
                     Train
                 </button>
+                
+                {/* 
+                    Prediction Contols that I ceate an input field to allow the user to enter
+                    a value so that its output can be predicted.
+                 */}
+                 <div className="predict-controls">
+                     <h2 className="section">Predicting</h2>
+                     <input
+                        className="field element"
+                        value={modelState.valueToPredict}
+                        name="valueToPredict"
+                        onChange={handleModelChange}
+                        type="number"
+                        placeholder="Enter an integer number"
+                    /><br/>
+                 </div>
             </div>
         </div>
     );
