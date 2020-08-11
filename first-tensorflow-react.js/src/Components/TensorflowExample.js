@@ -14,6 +14,22 @@ const TensorflowExample = () => {
         {x: 4, y: 7},
     ]);
 
+    // Define the Model-State.
+    const [modelState, setModelState] = useState({
+        model: null,
+        trained: false,
+        predictedValue: "Click on train!",
+        valueToPredict: 1,
+    });
+
+    // Event Handlers
+    const HandleValuePairChange = (e) =>{
+        const updatedValuePairs = update(valuePairsState, {
+            [e.target.dataset.index]: {
+                
+            }
+        });
+    }
     return (
         <div className="tensorflow-example">
 
