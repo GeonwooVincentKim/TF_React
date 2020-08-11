@@ -26,9 +26,21 @@ const TensorflowExample = () => {
     const HandleValuePairChange = (e) =>{
         const updatedValuePairs = update(valuePairsState, {
             [e.target.dataset.index]: {
-                
+                [e.target.name]: { $set: parseInt(e.target.value)}
             }
         });
+
+        setValuePairsState(
+            updatedValuePairs
+        );
+    };
+
+    // Adding Image or other substance Items to handleAddItem.
+    const handleAddItem = () => {
+        setValuePairsState([
+            ...valuePairsState,
+            {x : 1, y: 1}
+        ]);
     }
     return (
         <div className="tensorflow-example">
