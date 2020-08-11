@@ -120,6 +120,20 @@ const TensorflowExample = () => {
                         type="number"
                         placeholder="Enter an integer number"
                     /><br/>
+                    <div className="element">
+                        {modelState.predictedValue}
+                    </div>
+                    {/* 
+                        A button to perform the actual predicction which will only be enabled 
+                        once the model has been trained.
+                    */}
+                    <button
+                        className="element button--green"
+                        onClick={handlePredict}
+                        disabled={!modelState.trained}
+                    >
+                        Predict 
+                    </button>
                  </div>
             </div>
         </div>
