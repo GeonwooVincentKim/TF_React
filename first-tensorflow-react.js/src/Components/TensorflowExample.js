@@ -130,8 +130,7 @@ const TensorflowExample = () => {
                     <button
                         className="element button--green"
                         onClick={handlePredict}
-                        disabled={!modelState.trained}
-                    >
+                        disabled={!modelState.trained}>
                         Predict 
                     </button>
                  </div>
