@@ -49,6 +49,14 @@ const TensorflowExample = () => {
         [e.target.name]: [parseInt(e.target.value)],
     });
 
+    const handleTrainModel = () => {
+
+    }
+
+    const handlePredict = () =>{
+        
+    }
+
 
     return (
         <div className="tensorflow-example">
