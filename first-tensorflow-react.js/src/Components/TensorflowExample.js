@@ -54,13 +54,42 @@ const TensorflowExample = () => {
     }
 
     const handlePredict = () =>{
-        
+
     }
 
 
     return (
         <div className="tensorflow-example">
+            <div className="train-controls">
+                <h2 className="section">Training Data (x, y) pairs</h2>
+                <div className="row labels">
+                    <div className="field-label column">X</div>
+                    <div className="field-label column">Y</div>
+                </div>
 
+                {valuePairsState.map((val, index) => {
+                    return (
+                        <div key={index} className="row">
+                            <input
+                                className="field field-x column"
+                                value={val.x}
+                                name="x"
+                                data-index={index}
+                                onChange={HandleValuePairChange}
+                                type="number" pattern="[0-9]*"
+                            />
+                            <input
+                                className="field field-y column"
+                                value={val.y}
+                                name="y"
+                                data-index={index}
+                                onChange={HandleValuePairChange}
+                                type="number" pattern="[0-9]*"
+                            />
+                        </div>
+                    );
+                })};
+            </div>
         </div>
     );
 }
